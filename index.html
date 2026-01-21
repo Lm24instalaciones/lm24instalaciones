@@ -6,6 +6,7 @@
   <title>LM Instalaciones | Electricidad, Climatización y Mantenimiento Valencia</title>
   <meta name="description" content="LM Instalaciones: instalaciones eléctricas, climatización, renovación de aire y mantenimiento profesional en Valencia y alrededores. Presupuestos sin compromiso." />
   <meta name="keywords" content="instalaciones eléctricas Valencia, climatización Valencia, renovación de aire Valencia, mantenimiento Valencia" />
+
   <style>
     /* RESET */
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -21,21 +22,22 @@
       position: relative;
       overflow: hidden;
     }
-    .logo-placeholder img { max-height: 100%; }
+
+    /* LOGO PLACEHOLDER (MISMO CONTENEDOR, LOGO COMO FONDO) */
+    .logo-placeholder {
       width: 220px;
       height: 70px;
-      background: linear-gradient(135deg, #777, #999);
-      color: #fff;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 26px;
-      font-weight: bold;
       margin: 0 auto 15px auto;
       border-radius: 8px;
-      letter-spacing: 1px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.2);
       animation: fadeIn 1s ease-in-out;
+
+      /* LOGO */
+      background:
+        url("img/logo-lm24.png") center / contain no-repeat,
+        linear-gradient(135deg, #777, #999);
+
+      color: transparent; /* ocultamos el texto */
     }
 
     /* NAVIGATION */
@@ -114,72 +116,19 @@
 
     /* CONTACT */
     .contacto-info p { margin: 8px 0; font-weight: bold; }
-    form input, form textarea {
-      width: 100%;
-      padding: 14px;
-      margin-bottom: 16px;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      font-size: 15px;
-    }
-    form button {
-      background-color: #3b3b3b;
-      color: #fff;
-      border: none;
-      padding: 16px 28px;
-      font-size: 16px;
-      cursor: pointer;
-      border-radius: 8px;
-      transition: background-color 0.3s, transform 0.3s;
-    }
-    form button:hover { background-color: #25D366; transform: translateY(-2px); }
 
-    /* WORKS GRID */
-    .trabajos-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 25px;
-    }
-    .trabajo-item {
-      border-radius: 10px;
-      overflow: hidden;
-      position: relative;
-      background-color: #fafafa;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-    .trabajo-item:hover { transform: translateY(-5px); box-shadow: 0 6px 18px rgba(0,0,0,0.25); }
-    .trabajo-item img { width: 100%; height: auto; display: block; background-color: #ddd; }
-    .trabajo-item p { padding: 12px; font-weight: 500; }
-
-    /* TESTIMONIOS */
-    #testimonios p {
-      font-style: italic;
-      background-color: #f7f7f7;
-      padding: 14px 18px;
-      border-radius: 8px;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
-      margin-bottom: 14px;
-      position: relative;
-    }
-    #testimonios p::before {
-      content: '“';
-      font-size: 28px;
-      position: absolute;
-      left: 10px;
-      top: -8px;
-      color: #25D366;
+    /* Animación */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
-    /* Footer */
-    footer { background-color: #2e2e2e; color: #fff; text-align: center; padding: 25px; border-top: 3px solid #25D366; }
-
-    /* Animaciones */
-    @keyframes fadeIn { from { opacity: 0; transform: translateY(-10px);} to { opacity: 1; transform: translateY(0);} }
-
-    @media (max-width: 600px) { nav a { display: block; margin: 10px 0; } }
+    @media (max-width: 600px) {
+      nav a { display: block; margin: 10px 0; }
+    }
   </style>
 </head>
+
 <body>
 
 <header>
